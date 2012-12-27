@@ -99,8 +99,8 @@ def run():
             proxying = eventlet.spawn(maintain_proxy_backend_pool)
 
             print "  {0}".format(reply['banner'])
-            print "  Port {0} is now accessible from http://{1} ...\n".format(
-                    port, reply['host'])
+            print "  Port {0} is now accessible from http://{1}{2} ...\n".format(
+                    port, reply['host'], host[0])
 
             try:
                 while True:
