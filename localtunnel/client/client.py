@@ -97,8 +97,10 @@ def run():
                     pool.spawn_n(open_proxy_backend, 
                             backend, port, name, client)
             proxying = eventlet.spawn(maintain_proxy_backend_pool)
-
-            print "  {0}".format(reply['banner'])
+            try:
+                print "  {0}".format(reply['banner'])
+            except KeyError:
+                pass
             print "  Port {0} is now accessible from http://{1}{2} ...\n".format(
                     port, reply['host'], host[0])
 
