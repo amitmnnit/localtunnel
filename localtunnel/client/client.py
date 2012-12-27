@@ -101,7 +101,7 @@ def run():
                 print "  {0}".format(reply['banner'])
             except KeyError:
                 pass
-            print "  Port {0} is now accessible from http://{1}{2} ...\n".format(
+            print "  Port {0} is now accessible from http://{1}.{2} ...\n".format(
                     port, reply['host'], host[0])
 
             try:
